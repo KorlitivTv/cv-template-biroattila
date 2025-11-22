@@ -282,6 +282,8 @@ img.floatLeft {
 	font-weight:bold;
 	border-bottom: 3px solid #bebebe;
 	border-style:dotted;
+	margin-top: 20px;      
+    margin-bottom: 10px;
 }
 
 .ribbon_portfolio{
