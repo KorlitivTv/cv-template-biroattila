@@ -301,8 +301,9 @@ img.floatLeft {
 }
 #skill_list2{
     float: left;
-    margin: -5px 0 0 -30px;
+    margin: -5px 0 0 0;   
 }
+
 .year{
     height:100px;
     font-family: 'PT Sans Narrow', cursive;
