@@ -176,13 +176,14 @@ img.floatLeft {
 	background-repeat: no-repeat;
 	background-position: right top;
 }
-#name_tittle h1{
-	font-family: 'PT Sans Narrow', cursive;
-	color: #022E63;
-	font-size: 85px;
-	text-align:left;
-	font-weight:bold;
+#name_tittle h1 {
+    font-family: 'PT Sans Narrow', cursive;
+    color: #022E63;
+    font-size: 62px;
+    line-height: 1.05;
+    font-weight: bold;
 }
+
 #name_tittle ul{
 	color: #74767A;
     font-family: 'PT Sans',sans-serif;
