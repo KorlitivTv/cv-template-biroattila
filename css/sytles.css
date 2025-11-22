@@ -185,15 +185,16 @@ img.floatLeft {
 }
 
 #name_tittle ul{
-	color: #74767A;
+    color: #74767A;
     font-family: 'PT Sans',sans-serif;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: bold;
-    line-height: 1.0em;
+    line-height: 1.2em;
     list-style-type: none;
-    margin: -24px 0 0 -31px;
+    margin: 10px 0 0 0; 
     text-align: left;
 }
+
 #name_tittle li{
 	padding: 0px;
 }
