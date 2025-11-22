@@ -333,8 +333,9 @@ img.floatLeft {
     list-style-type: none;
 }
 #technical_skill{
-	height: 240px;
-	margin: 15px 0 0;
+    height: auto;      
+    margin: 15px 0 40px;  
+    overflow: hidden;  
 }
 .progress_container{
 	padding:1px;
