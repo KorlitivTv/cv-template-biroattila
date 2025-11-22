@@ -293,61 +293,59 @@ img.floatLeft {
     float: left;
     height: 160px;
     width: 150px;
-	background-color:#fff;
-	-webkit-border-radius: 3px;
+    background-color:#fff;
+    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     box-shadow: 0 6px 6px -5px #727274;
 }
-#skill_list2{
-    float: left;
-    margin: -5px 0 0 0;   
+
+
+
+#technical_skill{
+    margin: 15px 0 40px;
+    height: auto;
+    display: flex;             
+    align-items: flex-start;
 }
 
-.year{
-    height:100px;
-    font-family: 'PT Sans Narrow', cursive;
-    font-size:22px;
-    color:#737475;
-    padding:  0 0 0 10px;
+
+#skill_list2{
+    float: none;               
+    margin: 0;
 }
-/* ===SKILL SET===*/
-#skill_list ul{
-    list-style-type: none;
-    text-align:right;
-    font-family: 'PT Sans Narrow', sans-serif;
-    font-size: 20px;
-    line-height: 1.74em;
-}
+
 #skill_list2 ul{
     list-style-type: none;
-    text-align:left;
+    text-align: left;
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 18px;
     line-height: 1.5em;
-	font-weight: bold;
-}
-#skill_set {
+    font-weight: bold;
     margin: 0;
+    padding: 0;
 }
+
+
+#skill_set {
+    margin: 0 0 0 30px;        
+}
+
 #skill_set ul{
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-#technical_skill{
-    height: auto;      
-    margin: 15px 0 40px;  
-    overflow: hidden;  
-}
+
 .progress_container{
-    padding:1px;
-    height:15px;
-    overflow:hidden;
-    background-color:#ccc;
-    margin: 0 0 10px 0;
+    padding: 1px;
+    height: 15px;
+    overflow: hidden;
+    background-color: #ccc;
+    margin: 0 0 10px 0;        
     width: 270px;
 }
 
-	
 .progress_bar{
 	height:22px;
 	width:0px;
