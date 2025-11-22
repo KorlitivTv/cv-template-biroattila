@@ -300,42 +300,40 @@ img.floatLeft {
     box-shadow: 0 6px 6px -5px #727274;
 }
 
-
-
 #technical_skill{
     margin: 15px 0 40px;
     height: auto;
-    display: flex;             
-    align-items: flex-start;
 }
 
-
-#skill_list2{
-    float: none;               
+#technical_skill .skill_rows{
+    list-style: none;
     margin: 0;
+    padding: 0;
 }
 
-#skill_list2 ul{
-    list-style-type: none;
-    text-align: left;
+#technical_skill .skill_rows li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.skill_label{
+    flex: 0 0 130px;   
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 18px;
-    line-height: 1.5em;
     font-weight: bold;
-    margin: 0;
-    padding: 0;
 }
 
-
-#skill_set {
-    margin: 0 0 0 30px;        
+.progress_container{
+    flex: 1;
+    padding: 1px;
+    height: 15px;
+    overflow: hidden;
+    background-color: #ccc;
+    margin: 0 0 0 10px;  
+    width: auto;         
 }
 
-#skill_set ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
 .progress_container{
     padding: 1px;
