@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
 <script src="js/scroll-startstop.events.jquery.js" type="text/javascript"></script>
 
-<link href='http://fonts.googleapis.com/css?family=Lobster|PT+Sans+Narrow:400,700|PT+Sans:400,700' rel='stylesheet' type='text/css' />
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
 <script language="javascript" src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
 <script language="javascript" src="js/jquery.tips.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
@@ -141,16 +141,104 @@ $(this).fadeTo("fast", 0.8);
         </script>
 
 </head>
+	<script type="text/javascript">
+$(function () {
+    // Simple rotating hobbies
+    var hobbies = [
+        'Experimenting with new photo compositions.',
+        'Playing story-driven and co-op games.',
+        'Learning new concepts in C++, Java and C#.',
+        'Tweaking PC hardware and testing setups.'
+    ];
+    var index = 0;
+
+    function showHobby() {
+        $('#hobby-rotator').fadeOut(300, function () {
+            $(this).text(hobbies[index]).fadeIn(300);
+        });
+        index = (index + 1) % hobbies.length;
+    }
+
+    if ($('#hobby-rotator').length) {
+        $('#hobby-rotator').hide();
+        showHobby();
+        setInterval(showHobby, 4000);
+    }
+});
+</script>
+
+	<script type="text/javascript">
+$(function () {
+    function generateCaptcha() {
+        var a = Math.floor(Math.random() * 9) + 1;
+        var b = Math.floor(Math.random() * 9) + 1;
+        $('#captcha-question').text(a + ' + ' + b + ' =');
+        $('#captcha-question').data('answer', a + b);
+    }
+
+    if ($('#contact-form').length) {
+        generateCaptcha();
+
+        $('#contact-form').on('submit', function (e) {
+            e.preventDefault();
+
+            var name = $('#Name').val().trim();
+            var email = $('#Email').val().trim();
+            var message = $('#Message').val().trim();
+            var captcha = $('#captcha').val().trim();
+            var expected = $('#captcha-question').data('answer');
+
+            if (!name || !email || !message) {
+                $('#contact-status').text('Please fill in all fields.');
+                return;
+            }
+
+            if (captcha != expected) {
+                $('#contact-status').text('Captcha incorrect, please try again.');
+                generateCaptcha();
+                $('#captcha').val('');
+                return;
+            }
+
+            $('#contact-status').text('Thank you! Your message has been validated. Your email client will now open.');
+
+            var mailto = 'mailto:github.scratch119@passmail.net'
+                + '?subject=' + encodeURIComponent('Message from CV site - ' + name)
+                + '&body=' + encodeURIComponent(
+                    'From: ' + name + ' <' + email + '>\n\n' +
+                    message
+                );
+
+            window.location.href = mailto;
+        });
+    }
+});
+</script>
+
+
 <body>
 
 
     <div id="header"><!-- Header -->
 	
 	<ul class="social_panel">
-				<li><a href="https://www.facebook.com/B1R0K4" title="Facebook Profile" class="blue-darker"><img src="img/facebook.png" width="24" height="24" alt="Facebook Profile"/></a></li>
-				<li><a href="http://www.twitter.com/biroattila" title="Twitter/X Profile" class="blue"><img src="img/twitter.png" width="24" height="24" alt="Twitter Profile"/></a></li>
-				<li><a href="http://www.linkedin.com/in/biroattila" title="LinkedIn Profile" class="blue-dark"><img src="img/linkedin.png" width="24" height="24" alt="Linked In Profile"/></a></li>
-            </ul> 
+    <li>
+        <a href="https://www.facebook.com/B1R0K4" title="Facebook Profile" class="blue-darker" target="_blank" rel="noopener noreferrer">
+            <img src="img/facebook.png" width="24" height="24" alt="Facebook Profile"/>
+        </a>
+    </li>
+    <li>
+        <a href="http://www.twitter.com/biroattila" title="Twitter/X Profile" class="blue" target="_blank" rel="noopener noreferrer">
+            <img src="img/twitter.png" width="24" height="24" alt="Twitter Profile"/>
+        </a>
+    </li>
+    <li>
+        <a href="http://www.linkedin.com/in/biroattila" title="LinkedIn Profile" class="blue-dark" target="_blank" rel="noopener noreferrer">
+            <img src="img/linkedin.png" width="24" height="24" alt="Linked In Profile"/>
+        </a>
+    </li>
+</ul>
+
     </div><!-- End Header -->
 <div class="container_24">
 
@@ -284,6 +372,9 @@ $(this).fadeTo("fast", 0.8);
 				 <li>Technology & Programming</li>
 				 <li>PC Hardware and IT</li>
 			 </ul>
+			  <div class="dynamic-hobby">
+             <h3>What I’m into right now</h3>
+             <p id="hobby-rotator"></p>
 		</div>
 	</div>
 
@@ -392,25 +483,29 @@ $(this).fadeTo("fast", 0.8);
 <div class="grid_10">		
     <div class="ribbon2">Contact Me</div>
     
+    <div id="contact-area">
+        <form id="contact-form">
+            <label for="Name">Name:</label>
+            <input type="text" name="Name" id="Name" />
+
+            <label for="Email">Email:</label>
+            <input type="text" name="Email" id="Email" />
+
+            <label for="Message">Message:</label><br />
+            <textarea name="Message" rows="5" cols="20" id="Message"></textarea>
+
+            <div class="captcha-row">
+                <label for="captcha">Captcha:</label>
+                <span id="captcha-question"></span>
+                <input type="text" name="captcha" id="captcha" />
+            </div>
+
+            <input type="submit" name="submit" value="Send" class="submit-button" />
+            <p id="contact-status" class="contact-status"></p>
+        </form>
+    </div>
 </div>
 
-		    
-		    <!-- CONTACT FORM -->
-            <!--div id="contact-area">
-		
-			<!--form method="post" action="#">
-				<label for="Name">Name:</label>
-				<input type="text" name="Name" id="Name" />
-	
-				<label for="Email">Email:</label>
-				<input type="text" name="Email" id="Email" />
-				
-				<label for="Message">Message:</label><br />
-				<textarea name="Message" rows="20" cols="20" id="Message"></textarea>
-
-				<input type="submit" name="submit" value="Submit" class="submit-button" />
-			</form-->
-			
 
 	    <div class="item_tittle"> 
         <h1></h1>
