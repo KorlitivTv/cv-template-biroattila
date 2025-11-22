@@ -338,13 +338,14 @@ img.floatLeft {
     overflow: hidden;  
 }
 .progress_container{
-	padding:1px;
-	height:15px;
-	overflow:hidden;
-	background-color:#ccc;
-	margin: 0 0 10px 90px;
-	width: 270px;
+    padding:1px;
+    height:15px;
+    overflow:hidden;
+    background-color:#ccc;
+    margin: 0 0 10px 0;
+    width: 270px;
 }
+
 	
 .progress_bar{
 	height:22px;
